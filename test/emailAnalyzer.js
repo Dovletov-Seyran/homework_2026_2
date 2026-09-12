@@ -33,6 +33,30 @@ QUnit.module("Тестируем функцию emailAnalyzer", function() {
             mostFrequentEmail: ""
         });
     });
+
+    QUnit.test("Работает правильно с пустой строкой", function(assert) {
+        const result = emailAnalyzer("");
+
+        assert.deepEqual(result, {
+            emailCount: 0,
+            uniqueEmails: [],
+            mostFrequentEmail: ""
+        });
+    });
+
+    QUnit.test("Возвращает самый частый email среди нескольких разных", function(assert) {
+        const input = "Пишите на a@mail.ru, b@mail.ru, потом снова a@mail.ru и еще раз A@MAIL.RU.";
+        const result = emailAnalyzer(input)
+
+        assert.deepEqual(result, {
+            emailCount: 4,
+            uniqueEmails: ['a@mail.ru', 'b@mail.ru'],
+            mostFrequentEmail: 'a@mail.ru',
+        });
+    });
+
 });
+
+
 
 
