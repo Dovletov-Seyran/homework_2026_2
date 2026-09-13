@@ -22,7 +22,7 @@ const EMAIL_REGEXP = /[\w+-]+(?:\.[\w+-]+)*@[a-z\d]+(?:\.[a-z\d]+)+/gi;
  * @returns {{emailCount: Number, uniqueEmails: Array<String>, mostFrequentEmail: String}}
  */
 const emailAnalyzer = (text) => {
-  if (typeof text != "string") {
+  if (typeof text !== "string") {
     throw new TypeError("Аргумент должен быть строкой");
   }
 
