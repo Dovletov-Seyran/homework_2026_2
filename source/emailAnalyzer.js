@@ -15,6 +15,8 @@ const EMAIL_REGEXP = /[\w+-]+(?:\.[\w+-]+)*@[a-z\d]+(?:\.[a-z\d]+)+/gi;
  *
  * @param {String} text - строка для анализа
  *
+ * @throws {TypeError} если аргумент не является строкой
+ *
  * @example
  * // returns { emailCount: 2, uniqueEmails: ['user@example.com'],  mostFrequentEmail: 'user@example.com' }
  * emailAnalyzer('Контакты: User@Example.com и user@example.com.');
