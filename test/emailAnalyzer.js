@@ -92,4 +92,12 @@ QUnit.module("Тестируем функцию emailAnalyzer", function () {
       });
     },
   );
+
+  QUnit.test("TypeError, если аргумент не строка", function (assert) {
+    [null, undefined, 42, {}, [], true].forEach(function (value) {
+      assert.throws(function () {
+        emailAnalyzer(value);
+      }, TypeError);
+    });
+  });
 });
