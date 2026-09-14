@@ -64,3 +64,13 @@ QUnit.module("Тестируем функцию emailAnalyzer", function() {
         });
     });
 });
+
+    QUnit.test("Работает с пустой строкой", function(assert) {
+        const result = emailAnalyzer("");
+
+        assert.deepEqual(result, {
+            emailCount: 0,
+            uniqueEmails: [],
+            mostFrequentEmail: ""
+        });
+    });
